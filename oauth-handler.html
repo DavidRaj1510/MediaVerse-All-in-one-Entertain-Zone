@@ -1,20 +1,18 @@
-<!-- public/oauth-handler.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
     <title>Redirecting...</title>
-    <script>
-      window.onload = function () {
-        // Preserve hash from Supabase redirect (includes access token)
-        const hash = window.location.hash;
+    <script type="module">
+      import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-        // Redirect to your app's hash route
-        const targetUrl = "/MediaVerse-All-in-one-Entertain-Zone/#/oauth-callback" + hash;
+      const supabase = createClient(
+        "https://htnidjlzxnjdfagvuuog.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh0bmlkamx6eG5qZGZhZ3Z1dW9nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ3ODg1MjAsImV4cCI6MjA2MDM2NDUyMH0.mIg18HjVbyiMahNp5iI7YevCYfgkCeNY6UOI7jvRomY" // your real anon public key
+      );
 
-        // Do the redirect
-        window.location.replace(targetUrl);
-      };
+      supabase.auth.onAuthStateChange((event, session) => {
+        window.location.href = "/MediaVerse-All-in-one-Entertain-Zone/#/oauth-callback";
+      });
     </script>
   </head>
   <body>
