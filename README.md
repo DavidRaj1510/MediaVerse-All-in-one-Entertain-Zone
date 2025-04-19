@@ -65,11 +65,3 @@ Uses OpenAI's GPT API to:
   - `/auth` (Login & Register)
 
 ---
-
-## ⚙️ Setup Instructions
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/DavidRaj1510/MediaVerse-All-in-one-Entertain-Zone.git
-cd MediaVerse-All-in-one-Entertain-Zone
