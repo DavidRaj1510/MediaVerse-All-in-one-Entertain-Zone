@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 100%;
+
+    --card: 240 10% 4%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* MediaVerse theme colors */
+    --comics: 217 91% 60%;
+    --anime: 330 81% 60%;
+    --novels: 142 71% 45%;
+    --kdramas: 256 91% 65%;
+    --magazines: 35 92% 50%;
+    --cartoons: 0 84% 60%;
+    --movies: 226 100% 61%;
+    --games: 35 92% 50%;
+    
+    /* Netflix theme colors */
+    --netflix-red: 357 92% 47%;
+    --netflix-black: 0 0% 8%;
+    --netflix-dark-gray: 0 0% 15%;
+    --netflix-light-gray: 0 0% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:scale-105;
+}
+
+.media-card {
+  @apply overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300;
+  aspect-ratio: 2/3;
+}
+
+.search-input {
+  @apply bg-black/30 border border-gray-700 text-white rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-opacity-50;
+}
+
+/* Netflix-inspired styles */
+.netflix-gradient {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), 
+              url('/public/lovable-uploads/3ce545b9-f1a8-4291-b9c3-98a071766597.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.netflix-button {
+  @apply bg-[#e50914] text-white font-semibold py-3 px-6 rounded hover:bg-[#f40612] transition-colors duration-300;
+}
+
+.netflix-input {
+  @apply bg-[#333] text-white border border-[#333] rounded p-4 w-full focus:outline-none focus:border-[#e87c03];
+}
+
+.nav-item-hover {
+  @apply transition-all duration-300;
+}
+
+.nav-item-comics:hover {
+  @apply text-comics;
+}
+
+.nav-item-anime:hover {
+  @apply text-anime;
+}
+
+.nav-item-novels:hover {
+  @apply text-novels;
+}
+
+.nav-item-kdramas:hover {
+  @apply text-kdramas;
+}
+
+.nav-item-magazines:hover {
+  @apply text-magazines;
+}
+
+.nav-item-cartoons:hover {
+  @apply text-cartoons;
+}
+
+.nav-item-movies:hover {
+  @apply text-movies;
+}
+
+.nav-item-games:hover {
+  @apply text-games;
+}
+
+/* Auth form styling */
+.auth-container {
+  @apply min-h-screen flex items-center justify-center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), 
+              url('/public/lovable-uploads/191390b6-81e4-41f9-afe2-653101e8b737.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.auth-form {
+  @apply bg-black/80 rounded-md p-12 max-w-md w-full;
+}
+
+.auth-title {
+  @apply text-3xl font-bold mb-8 text-white;
+}
+
+.auth-input {
+  @apply bg-[#333] text-white border border-[#333] rounded p-4 w-full mb-4 focus:outline-none focus:border-[#e87c03];
+}
+
+.auth-button {
+  @apply bg-[#e50914] text-white font-semibold py-3 px-6 rounded w-full hover:bg-[#f40612] transition-colors duration-300 mb-4;
+}
