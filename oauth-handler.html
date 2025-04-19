@@ -1,15 +1,23 @@
+<!-- public/oauth-handler.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Redirecting...</title>
     <script>
-      // Grab hash params from URL and redirect to HashRouter version
-      const hash = window.location.hash;
-      window.location.replace("/MediaVerse-All-in-one-Entertain-Zone/#/oauth-callback" + hash);
+      window.onload = function () {
+        // Preserve hash from Supabase redirect (includes access token)
+        const hash = window.location.hash;
+
+        // Redirect to your app's hash route
+        const targetUrl = "/MediaVerse-All-in-one-Entertain-Zone/#/oauth-callback" + hash;
+
+        // Do the redirect
+        window.location.replace(targetUrl);
+      };
     </script>
   </head>
   <body>
-    Redirecting...
+    <p>Redirecting...</p>
   </body>
 </html>
